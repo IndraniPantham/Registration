@@ -1,20 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content [fullscreen]="true" >
+  <div class="container p-0">
+    <div class="row">
+      <div class="col">
+        <img src="assets/main.jpg" alt="landing_img" style="height: 500px;opacity: 30%;">
+      </div>
+    </div>
+    <div class="row p-3 formSection text-center">
+      <div class="col">
+        <h3 class="fontFam">Enter Registration Number :</h3>
+        <input type="text" name="regNo" [(ngModel)]="regNo" class="form-control text-center" placeholder="KA19P8488">
+        <button type="button" class="btn btn-primary btn-block my-2 fontFam" name="button" (click)="onSubmit()" [disabled]="!regNo || regNo.length != 10">Submit
+          <div class="spinner-border spinner-border-sm" role="status" *ngIf="loading">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </button>
+      </div>
+    </div>
   </div>
 </ion-content>
